@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실험실</title>
+</head>
+<body>
+    <button class="number" onclick="takeTarget()">시작</button><span class="target__time">
+    <span id="rmin">3</span>:
+    <span id="rsec">00</span>
+</span>
+    <P>1. if you want to increse your muscle size how many reps in set?</P>
+    <div id="answer">정답 : 
+        <input id="answer-input" type="text" placeholder="정답을 입력하세요">
+    </div>
+
+<P>2. how many protein can our body absorb during single session?</P>
+<div id="answer">정답 : 
+    <input id="answer-input1" type="text" placeholder="정답을 입력하세요">
+</div>
+
+<div id="score-area" style="float: right;">
+    정답개수 : <span id="answer_score"></span>개
+</div>
+<script>
+         const answerInput = document.getElementById('answer-input');
+        console.log(answerInput);
+        const scoreBoard = document.getElementById('score-area');
+    let answerCount = 0;
+    document.getElementById('answer_score').innerText = answerCount;
+    const answerInput1 = document.getElementById('answer-input1');
+    console.log(answerInput1);
+    console.log(answerCount);
+    const enterKey = (event)=> {
+            if (event.code === "Enter"){
+                showAnswer();
+            }
+        };
+        answerInput.addEventListener("keypress", (event)=> {
+            enterKey(event);
+        });
+        const showAnswer = ()=>{
+            let input = answerInput.value;
+            if( input == 8){
+            alert('정답입니다.');
+            document.getElementById('answer_score').innerText = ++answerCount;
+        }
+     else
+     alert('오답입니다.');            
+    
+        };
+
+
+
+    const showAnswer1 = ()=>{
+        let input1 = answerInput1.value;
+        if( input1 == 30)
+    alert('정답입니다.');
+ else
+ alert('오답입니다.');            
+
+    };
+
+    const enterKey1 = (event)=> {
+        if (event.code === "Enter"){
+            showAnswer1();
+        }
+    };
+    answerInput1.addEventListener("keypress", (event)=> {
+        enterKey1(event);
+    });       
+
+    const rMin = document.getElementById("rmin")
+    const rSec = document.getElementById("rsec")
+
+
+
+    let time = 180;
+    const takeTarget = () => {
+        setInterval(function(){
+            if(time>0) {
+                time = time -1;
+                let min = Math.floor(time / 60);
+                let sec = String(time % 60).padStart(2, "0");
+                rMin.innerText = min;
+                rSec.innerText = sec;
+                
+            }
+        }, 1000);
+    };
+
+    
+</script>
+
+<!-- 정답개수가 올라가게 하는 방법이 있을까 아니면 처음부터 다시 세팅해야 하는 것일까? -->
+
+</body>
+</html>

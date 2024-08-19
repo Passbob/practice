@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <!-- 
+    창을 실행하면 사진과 함께 랜덤한 문제가 출제 됩니다.
+    맨 위에는 남은시간
+    그리고 정답 개수와 남은 개수를 표시하는 스코어보드
+    사진
+    문제
+    정답창으로 화면을 구성할 계획이고
+    타이머가 0이 되면 다음 문제로 넘어가도록 설정
+    정답을 쓴 뒤에 enter 혹은 제출버튼을 클릭 후 정답 문구와 함께 다음 문제로 넘어갈 수 있도록 설정
+    하지만 오답이라면 오답 문구가 나온 뒤 타이머는 계속 흐르게
+    문제를 맞히게 되면 정답 개수 카운트가 올라가고 남은 개수 낮아지도록
+    모든 문제가 끝나면 완료메세지
+    -->
+
+<!-- 
+일단 시간, 스코어보드, 사진, 문제, 정답창 그리고 초기화 버튼을 div로 구성해 화면에 배치
+타이머 설정
+답 입력 후 enter and summit 이벤트와 alert로 문구 띄우기
+스코어보드 변동 설정
+모든 문제 끝나면 완료 메세지
+
+for반복문을 이용해서 JS만들면 좀 더 편할듯
+https://cobslab.tistory.com/110을 참고해서 만들계획
+-->
+
+<!--초기변수-->
+<script>
+    const path = '../quiz_img/'; //사진 경로의 디폴트값, 'path + 이미지이름'으로 가져올 예정
+    const totalCount = 4;//총 문제의 갯수, 총 문제가 끝나면 종료될 수 있도록 미리 변수 설정
+    let answerCount = 0;//초기 정답 값을 0으로 설정, 값이 바뀌기 때문에 let으로 설정
+    let crntidx = 0;//현재 화면에 나오고 있는 영화의 인덱스
+    const crntQ = ["근 성장을 위한 가장 적절한 반복횟수는? 3회, 8회, 15회",
+        "1회 동안 체내에서 흡수할 수 있는 단백질의 최대량은 10g, 20g, 30g",
+        "최대 심박수= (n)-(자신의 나이) n에 들어갈 숫자는? 200, 220, 240",
+        "총 칼로리= 기초대사량-[x] x에 들어갈 말은? 활동대사량, 운동대사량, 기초대사량"
+    ]; //현재 화면에 나오고 있는 사진의 문제
+    let crntA; //현재 화면에 나오고 있는 사진의 정답
+    let timer; //시간제한 타이머에 들어가는 값
+    let limit; //초기 설정값
+    //그렇다면 문제는 사진에 따라서 값이 나와야하기 때문에 사진에 결합시키는 것이 좋아보인다.
+
+    const data = ["8회", "30g", "220", "활동대사량"];
+    //답에 적은 값에서 공백을 제거할 예정이기 때문에 모든 공백문자를 제거함
+</script>
+
+<div id="container" class="container">
+    <p id="time_area">남은시간 : 
+        <span id="left_time"></span>초
+        <button id="start" onclick="countdownTimer()"></button>
+    </p>
+    <div class="score_area">
+        정답개수: <span id="answer_count"></span>개
+        남은개수: <span id="left_count"></span>개
+    </div>
+    <div class="img_area"><img src="#" id="img"></div>
+    <div class="Q_area">문제 : <span id="what"></span></div>
+    <div class="answer_area">
+        <p>정답 : </p>
+        <input type="text" id="answer">
+        <input type="button" id="enter" value="확인" onclick="send()">
+    </div>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
