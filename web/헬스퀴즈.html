@@ -34,7 +34,7 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
 
 <!--초기변수-->
 <script>
-    const path = '../quiz_img/'; //사진 경로의 디폴트값, 'path + 이미지이름'으로 가져올 예정
+    const path = './'; //사진 경로의 디폴트값, 'path + 이미지이름'으로 가져올 예정
     const totalCount = 4;//총 문제의 갯수, 총 문제가 끝나면 종료될 수 있도록 미리 변수 설정
     let answerCount = 0;//초기 정답 값을 0으로 설정, 값이 바뀌기 때문에 let으로 설정
     let crntidx = 0;//현재 화면에 나오고 있는 영화의 인덱스
@@ -54,8 +54,8 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
 
 <div id="container" class="container">
     <p id="time_area">남은시간 : 
-        <span id="left_time"></span>초
-        <button id="start" onclick="countdownTimer()"></button>
+        <span id="left_time">5</span>초
+        <button id="start" onclick="countdownTimer()">게임시작</button>
     </p>
     <div class="score_area">
         정답개수: <span id="answer_count"></span>개
@@ -70,7 +70,62 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
     </div>
 </div>
 
+<script>
+//시간 옆 게임시작 버튼을 누르면 시작되도록 설정, 그렇다면 카운트다운 함수 먼저 만들고 진행하자
+let time = 5;
+    const countdownTimer = () => {
+        setInterval(function(){
+            if(time>0 ) {
+                time = time -1;
+                left_time.innerText = time;
+
+            } else {
+                alert('Game over');
+                location.reload();
+}}, 1000);
+    };
+
+let imgSrc = path + data[crntidx] + '.png';
+document.getElementById('img').src = imgSrc;
+document.getElementById('what').innerText = crntQ[crntidx]
+crntA = data[crntidx]
+
+
+
+
+document.getElementById("answer").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        document.getElementById("enter").click(); // enter 버튼 클릭
+    }
+});
+
+
+
+function send(){
+    let ans = document.getElementById('answer').value;
+
+    if (ans == crntA){
+        answerCount += 1;
+        crntidx += 1;
+        left_count.innerText = totalCount - answerCount
+        answer_count.innerText = answerCount
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
+
 
 
 
