@@ -54,7 +54,7 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
 
 <div id="container" class="container">
     <p id="time_area">남은시간 : 
-        <span id="left_time">5</span>초
+        <span id="left_time">180</span>초
         <button id="start" onclick="countdownTimer()">게임시작</button>
     </p>
     <div class="score_area">
@@ -62,9 +62,9 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
         남은개수: <span id="left_count"></span>개
     </div>
     <div class="img_area"><img src="#" id="img"></div>
-    <div class="Q_area">문제 : <span id="what"></span></div>
+    <div class="Q_area">문제 : <span id="what"></span></div><br>
     <div class="answer_area">
-        <p>정답 : </p>
+        정답 : 
         <input type="text" id="answer">
         <input type="button" id="enter" value="확인" onclick="send()">
     </div>
@@ -72,12 +72,16 @@ https://cobslab.tistory.com/110을 참고해서 만들계획
 
 <script>
 //시간 옆 게임시작 버튼을 누르면 시작되도록 설정, 그렇다면 카운트다운 함수 먼저 만들고 진행하자
-let time = 5;
+let time = 180;
     const countdownTimer = () => {
         setInterval(function(){
             if(time>0 ) {
                 time = time -1;
                 left_time.innerText = time;
+                let imgSrc = path + data[crntidx] + '.png';
+document.getElementById('img').src = imgSrc;
+document.getElementById('what').innerText = crntQ[crntidx]
+crntA = data[crntidx]
 
             } else {
                 alert('Game over');
@@ -85,19 +89,6 @@ let time = 5;
 }}, 1000);
     };
 
-let imgSrc = path + data[crntidx] + '.png';
-document.getElementById('img').src = imgSrc;
-document.getElementById('what').innerText = crntQ[crntidx]
-crntA = data[crntidx]
-
-
-
-
-document.getElementById("answer").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        document.getElementById("enter").click(); // enter 버튼 클릭
-    }
-});
 
 
 
@@ -107,15 +98,25 @@ function send(){
     if (ans == crntA){
         answerCount += 1;
         crntidx += 1;
-        left_count.innerText = totalCount - answerCount
+        document.getElementById('what').innerText = crntQ[crntidx]
+        crntA = data[crntidx]
+        let imgSrc = path + data[crntidx] + '.png';
+        document.getElementById('img').src = imgSrc;
+        left_count.innerText = Number(totalCount) - Number(answerCount)
         answer_count.innerText = answerCount
+        if (crntA == 2){
+    alert('Clear');
+    location.reload();
+}
     }
 }
 
 
 
+//랜덤으로 할꺼면 == 으로 같은 값 찾아낼 수 있을 듯
 
 
+console.log(crntidx);
 
 
 
