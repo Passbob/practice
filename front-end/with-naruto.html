@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나루토랑 밥먹기</title>
+    <style>
+        #headLogo{
+            position: absolute;
+            top: 38px;
+            left: 802px;
+        }
+        .logo{
+            width: 275px;
+            height: 108px;
+        }
+        #headblock{
+            position: absolute;
+            top: 164px;
+            left: 445px;
+            width: 990px;
+            height: 104px;
+        }
+        .sign{
+            position: relative;
+
+        }
+        .textbox{
+            height: 33px;
+            border-radius: 8px;
+            border: 1px solid black;
+        }
+        .searchbtn{
+            width: 55px;
+            height: 33.63px;
+            border-radius: 16px;
+            border: 0.1px solid gray;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+        .btn{
+            width: 55px;
+            height: 33.63px;
+            border-radius: 16px;
+            border: 0.1px solid gray;
+            margin-left: 5px;
+            margin-right: 10px;
+            background-color: white;
+        }
+        .search{
+            width: 209px;
+        }
+        .searcharea{
+            position: absolute;
+            left: 1143px;
+            top: 143px;
+            width: 400px;
+        }
+
+        #bodyblock{
+            position: absolute;
+            top: 190px;
+            left: 445px;
+            width: 990px;
+            height: 508px;
+            border: 1px solid black;
+            background-color: rgba(191,191,223,0.78);
+        }
+        #underbody{
+            position: absolute;
+            top: 710px;
+            left: 449px; 
+            width: 981px;
+            height: 269px;
+        }
+        #foot{
+            position: absolute;
+            top: 999px;
+            left: 1340px; 
+            width: 500px;
+            font-size: 10px;
+        }
+
+        .text{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .now-arrow{
+            position: relative;
+            top: -200px;
+            left: 680px;
+        }
+        .com-arrow{
+            position: relative;
+            top: -20px;
+            left: 145px;
+        }
+        .content{
+            position: relative;
+            width: 582px;
+            height: 269px;
+            border: 1px solid black;
+        }
+        .Content{
+            font-size: 35px;
+            color: rgba(0,0,0,0.6);
+        }
+        .contentbox1{
+            position: relative;
+            left: 10px;
+            width: 232px;
+            height: 209px;
+            text-align: center;
+            border: 0.2px solid rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+        .contentbox2{
+            position: relative;
+            left: 20px;
+            width: 232px;
+            height: 209px;
+            text-align: center;
+            border: 0.2px solid rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+        .contentboxidx{
+            position: relative;
+            top: 161px;
+            left: -1px;
+            width: 232px;
+            height: 46px;
+            border: 0.2px solid rgba(0,0,0,0.2);
+            border-radius: 0px 0px 8px 8px;
+            align-content: center;
+        }
+        .con-arrow{
+            position: relative;
+            left: 70px;
+            top: 70px;
+            height: 20px;
+        }
+        .block{
+            display: inline-block;
+        }
+        .ad{
+            float: right;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 326px;
+            height: 260px;
+            border: 1px solid black;
+        }
+        .ad-img{
+            height: 100%;
+        }
+        .with{
+            position: relative;
+            top: 40px;
+            left: 70px;
+            width: 855px;
+            height: 419px;
+            
+        }
+        .screen{
+            position: absolute;
+            width: 845px;
+            height: 347px;
+            border: 1px solid rgba(0,0,0);
+            display: flex;
+            justify-content: center;
+        }
+        .Screen{
+            position: absolute;
+            width: 845px;
+            height: 347px;
+            border: 1px solid rgba(0,0,0);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .answer_area{
+            position: absolute;
+            top: 347px;
+            width: 845px;
+            height: 70px;
+            border: 1px solid rgba(0,0,0);
+            align-content: center;
+            background-color: white;
+        }
+        #answer{
+            width: 482px;
+            margin-left: 150px;
+        }
+        .vibration{
+            animation: vibration .1s infinite;
+        }
+        .start{
+            position: relative;
+            top: 160px;
+            left: -280px;
+        }
+        .starttext{
+            position: relative;
+            top: 100px;
+            left: 60px;
+            font-size: 30px;
+        }
+        .img_area{
+            width: 800px;
+            height: 347px;
+            background-color: white;
+        }
+
+        .bubble{
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            width: 198px;
+            height: 132px;
+            /* background-image: url('./picture/bubble.png'); */
+            background-color: white;
+            align-content: center;
+            text-align: center;
+        }
+        #question{
+            width: 198px;
+            height: 132px;
+            background-color: red;
+        }
+
+        @keyframes vibration {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <script>
+        const path = './picture/'; //사진 경로의 디폴트값, 'path + 이미지이름'으로 가져올 예정
+        let crntidx = 0;//현재 화면에 나오고 있는 화면의 인덱스
+        let Qdata = ['이름을 입력해주세요','안녕 ',
+            "출연작 <나루토>  ['용서해라 사스케']   ",
+            "출연작 <슬램덩크> ['왼손은 거들뿐']" ]; //질문배열
+        let Rdata = ['dkssud']
+    </script>
+
+    
+    <div id="headLogo"><img  class="logo"  src="./picture/logo.png">  </div>
+        <div class="searcharea">    
+                <input class="textbox search" type="text">
+                <input id="search-btn" class="searchbtn" type="button" value="검색">
+        </div>
+    <div id="bodyblock">     
+        <div class="with">
+            <div class="block">
+                <div id="screen1" class="Screen">
+                    <div class="starttext">게임을 시작하시려면 플레이를 눌러주세요.</div>
+                    <div class="start"><img src="./picture/start.png" onclick="start()"></div>
+                </div>
+                <div id="screen2" class="screen">
+                    <div class="img_area"><img id="img"></div>
+                    <div class="bubble"><div id="question"></div></div>
+                </div> 
+                <div class="answer_area">
+                    <input type="text" id="answer" class="textbox">
+                    <input type="button" id="enter" value="확인" class="btn" onclick="send()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="underbody" class="block">
+        <div class="content block">
+            <div class="text Content">Content</div>
+            <div id="name-quiz" class="block">
+                <div class="contentbox1 block">
+                    <div class="contentboxidx">애니 주인공 맞히기</div>
+                </div>
+            </div>
+            <div id="with-naruto" class="block">
+                <div class="contentbox2 block">
+                    <div class="contentboxidx">나루토랑 밥먹기</div>
+                </div>
+            </div>
+            <div class="block">
+            <img class="con-arrow" src="./picture/Group 6.png">
+            </div>
+        </div>
+        <span class="ad">
+            <img class="ad-img" src="./picture/짱구.webp">
+        </span>
+    </div>
+
+    <div id="foot">
+        ⓒ Cho comics Corp. tel 010-4163-0989
+    </div>
+
+<script>
+    document.getElementById('screen2').style.visibility='hidden';
+    function start(){
+        document.getElementById('screen1').style.visibility='hidden';
+        document.getElementById('screen2').style.visibility='visible';
+        document.getElementById('question').innertext = Qdata[crntidx];
+        document.getElementById('img').style.height = '100%';
+        let imgSrc = path + crntidx + '.png';
+        document.getElementById('img').src = imgSrc;
+    }   
+    function send(){
+        let ans = document.getElementById('answer').value;
+        crntidx += 1;
+        Rdata.push(ans);
+        document.getElementById('question').innertext = Qdata[crntidx];
+        let imgSrc = path + crntidx + '.png';
+        document.getElementById('img').src = imgSrc;
+    };
+</script>
+    
+</body>
+</html>

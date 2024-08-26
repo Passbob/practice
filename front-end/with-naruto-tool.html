@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나루토랑 밥먹기</title>
+</head>
+<body>
+    <!-- 기존에 문답에 써져있는 부분에 플러스해서 진행할 예정
+    필요한 기능
+    1. 입력한 값을 그대로 배열에 추가해서 진행하기 8/23에 배웠던 부분 써서 해볼 예정
+    2. 사진이 자연스럽게 넘어가도록 -> 화면이 서서히 생기는 기능을 넣고싶다.
+    3. 시작 화면과 플레이 화면을 아예 다르게 만들고 싶기 때문에 visibility 사용해서 바꿔보자
+    4. 끝에서 다른 루트를 3가지 넣고 싶다. 1)라면을 선택했을 때
+                                         2)일반선택
+                                         3)나루토가 싫어할만한 음식을 선택했을 때
+    5. 끝나고 10초 뒤 처음화면으로 넘어가는 창을 띄우기
+    -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    <!-- 타이핑 한 값을 돌려서 반환하는 웹 페이지를 만들것이다.
+     질문은 총 4개로
+     1. 이름을 입력해주세요
+     2. 안녕, name 오늘 점심 뭐 먹을거야? ->음식 메뉴(food1) 타이핑 유도하는 무언가
+     3. food1을 먹자고? 나 그거 어제 먹었는데... 다른건 없어? ->다른 메뉴(food2) 타이핑
+     4. 그래 food2먹으러 가자! 내가 맛집으로 데려가줄게 -> 하이퍼링크로 네이버플레이스 검색
+    으로 진행할 예정
+    
+    1. reply에 enter을 하게 되면 다음 reaction과 question이 나올 수 있도록 함
+    2. question 혹은 reaction의 배열이 끝나게 되면 next를 띄울 수 있도록 함
+    3. next에서 마지막 reply 토대로 네이버플레이스 음식점 검색
+
+    배열이 함수 안에서 흘러가게 하려면 순서는 어떻게 짜야할까?
+    function send(){
+    function a(...ans){
+        let ans = reply.value 
+        let message = ''
+        for(let ansv of ansv) message += ans;
+        return message;
+    }
+        이렇게 만들면 message에 쌓이는건가 ans에 쌓이는건가?
+    
+    if(){
+    idx += 1
+    let imgSrc = path + data[idx] + '.png';
+    document.getElementById('img').src = imgSrc;
+    question.innertext = 질문[idx]
+    }
+    }
+    -이 방법으로 하면 답이 나올까?
+    
+    구조분해할당을 최대한 사용해보고 답이 정해진 퀴즈 만들때랑 다르게 사용자의 입력이 값으로 들어가서 반환할 수 있도록
+    만들어서 반환하는 것이 목표
+    코드의 길이를 줄여보자
+    -->
+    <!-- 초기 변수 -->
+    <script>
+        const path = './문답/'; //사진경로의 디폴트 값, path + 사진이름 + 확장자이름 으로 불러올 예정
+        let idx = 0; //전체적인 인덱스의 흐름은 0부터 시작할 것이기 때문에 초기 설정값을 0으로 지정
+        const Qdata = []
+        const Rdata = []
+    </script>
+    
+    
+    
+    
+        <h1>안녕하세요</h1>
+        <div id="reaction"><img src="#" id="img" value="시작을 눌러주세요"></div>
+        <div id="question">시작을 눌러주세요</div>
+        <div id="typing-aria">타이핑 칸
+            <input id="reply" type="text"> <input id="enter" type="button" value="확인">
+        </div>
+        <input id="start"  type="button" onclick="go()" value="시작">
+    <script>
+        //시작 먼저 만들기
+    
+    </script>
+    
+    
+    </body>
+    </html>
+
+
+
+
+
+
+</body>
+</html>
