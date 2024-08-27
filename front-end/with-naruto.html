@@ -198,9 +198,7 @@
             width: 482px;
             margin-left: 150px;
         }
-        .vibration{
-            animation: vibration .1s infinite;
-        }
+
         #start{
             position: relative;
             top: 160px;
@@ -244,10 +242,21 @@
 
         @keyframes fadeOut {
             100% {
-                opacity: 0.3;
+                opacity: 0.2;
             }
+        }
+        .fadeIn{
+            animation: fadeIn 2s forwards;
+        }
 
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     .go{
         position: absolute;
         top: 300px;
@@ -376,7 +385,8 @@
         document.querySelector('#bodyblock').className = 'fadeOut'
         setTimeout(()=>{
             document.getElementById('screen3').style.visibility='visible';
-        },5000 )
+            document.getElementById('screen3').classList.add('fadeIn')
+        },4000 )
     }
     document.getElementById('answer').value = ''
     };
