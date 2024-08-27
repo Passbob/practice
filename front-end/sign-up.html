@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        #head{
+            position: absolute;
+            top: 30px;
+            left: 178px;
+        }
+        #sign_table{
+            position: absolute;
+            top: 140px;
+            left: 60px;
+        }
+        #foot{
+            position: absolute;
+            top: 360px;
+            left: 180px;
+        }
+        .text{
+            width: 100px;
+        }
+        .input_css{
+            width: 250px;
+        }
+        .br{
+            height: 10px;
+        }
+        #cancle1{
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            border-radius: 8px;
+            color: white;
+            background-color: #FF0000;
+            text-align: center;
+            align-content: center;
+            cursor: pointer;
+        }  
+        #sign_up{
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            border-radius: 8px;
+            color: white;
+            background-color: #BFBFDF;
+            text-align: center;
+            align-content: center;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #success{
+            position: absolute;
+            top: 130px;
+            left: 100px;
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            background-color: white;
+        }
+        
+        #success_text{
+            position: absolute;
+            top: 50px;
+            left: 35px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #cancle2{
+            position: absolute;
+            top: 140px;
+            left: 120px;
+            width: 60px;
+            height: 30px;
+            border-radius: 8px;
+            color: white;
+            background-color: #FF0000;
+            text-align: center;
+            align-content: center;
+            cursor: pointer;
+        }
+        .pointer{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div style="width: 500px; height: 450px; border: 1px solid black;"></div> -->
+    <!-- window.open을 이용해서 회원가입창을 열자 이때 onload window.resizeTo써보자 -->
+    <div id="head"><h1>회원가입</h1></div>
+    <div id="sign_table">
+        <table>
+            <tr>
+                <td class="text">아이디</td>
+                <td class="input"><input id="id" class="input_css" type="text"></td>
+            </tr>
+            <tr class="br"></tr>
+            <tr>
+                <td class="text">비밀번호</td>
+                <td class="input"><input class="input_css" type="password"></td>
+            </tr>
+            <tr class="br"></tr>
+            <tr>
+                <td class="text">이름</td>
+                <td class="input"><input class="input_css" type="text"></td>
+            </tr>
+            <tr class="br"></tr>
+            
+            <tr>
+                <td class="text">전화번호</td>
+                <td class="input"><input class="input_css" type="tel"></td>
+            </tr>
+            <tr class="br"></tr>
+            <tr>
+                <td class="text">이메일</td>
+                <td class="input"><input class="input_css" type="email"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="success">
+        <div id="success_text">회원 가입에 성공하셨습니다.</div>
+        <div id="cancle2">취소</div>
+    </div>
+    <div id="foot">
+        <div id="cancle1">취소</div><span id="sign_up">가입</span>
+    </div>
+
+    <script>
+        let cancle = document.getElementById('cancle1');
+        let cancle2 = document.getElementById('cancle2');
+        let sign_up = document.getElementById('sign_up');
+        let input = document.getElementsByClassName('input_css');
+        const success = document.getElementById('success');
+        success.style.visibility = 'hidden';
+        cancle.addEventListener('click', function(){window.close()});
+        cancle2.addEventListener('click', function(){window.close()});
+ 
+        sign_up.addEventListener('click', function (){
+
+            if(document.getElementById('id').value == 0){
+                alert('아이디를 다시 확인해주세요')}
+            else if(document.getElementById('pw').value == 0){
+                alert('비밀번호를 다시 확인해주세요')}
+            else if(document.getElementById('name').value == 0){
+                alert('이름을 다시 확인해주세요')}
+            else if(document.getElementById('tel').value == 0){
+                alert('전화번호 다시 확인해주세요')}
+            else if(document.getElementById('email').value == 0){
+                alert('이메일을 다시 확인해주세요')}
+            else{
+                success.style.visibility = 'visible';
+            }
+        });
+    </script>
+
+
+</body>
+</html>

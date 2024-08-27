@@ -9,6 +9,7 @@
             position: absolute;
             top: 38px;
             left: 802px;
+            cursor: pointer;
         }
         .logo{
             width: 275px;
@@ -37,6 +38,7 @@
             border: 0.1px solid gray;
             margin-left: 5px;
             margin-right: 10px;
+            cursor: pointer;
         }
         .search{
             width: 459px;
@@ -175,6 +177,7 @@
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
             border-radius: 8px;
+            cursor: pointer;
         }
         .contentbox2{
             position: relative;
@@ -184,6 +187,7 @@
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
             border-radius: 8px;
+            cursor: pointer;
         }
         .contentboxidx{
             position: relative;
@@ -288,7 +292,29 @@
     <div id="foot">
         ⓒ Cho comics Corp. tel 010-4163-0989
     </div>
+<script>
+        const sign_up = document.getElementById('sign-up');
+    sign_up.addEventListener('click', function(){
+        window.open('./sign-up.html', '회원가입', 'width=500px, height=450px');
+    })
+        const search = document.getElementById('search-btn');
+        search.addEventListener('click', function(){
+        location.href = ('./search.html')
+    })
+        const logo = document.getElementById('headLogo');
+        logo.addEventListener('click', function(){
+        location.href = ('./main.html')
+    })
+        const name_quiz = document.getElementById('name-quiz');
+        name_quiz.addEventListener('click', function(){
+        location.href = ('./name-quiz.html')
+    })
+        const with_naruto = document.getElementById('with-naruto');
+        with_naruto.addEventListener('click', function(){
+        location.href = ('./with-naruto.html')
+    })
 
+</script>
 
 </body>
 </html>
