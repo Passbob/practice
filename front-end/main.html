@@ -178,20 +178,25 @@
             position: relative;
             left: 10px;
             width: 232px;
-            height: 209px;
+            height: 161px;
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
+            background-image: url(./picture/ani.png);
+            background-size: cover;
             cursor: pointer;
+
         }
         .contentbox2{
             position: relative;
             left: 20px;
             width: 232px;
-            height: 209px;
+            height: 161px;
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
+            background-image: url(./picture/naruto.png);
+            background-size: cover;
             cursor: pointer;
         }
         .contentboxidx{
@@ -234,7 +239,7 @@
 <body>
     <div id="headLogo"><img  class="logo"  src="./picture/logo.png">  </div>
     <div id="headblock">
-        <input class="textbox search" type="text"><input id="search-btn" class="btn" type="button" value="검색">
+        <input id="search_v" class="textbox search" type="text"><input id="search-btn" class="btn" type="button" value="검색">
         ID: <input class="textbox id" type="text">
         PW: <input class="textbox pw" type="password"><input id="login"  class="btn" type="button" value="로그인">
         <div class="sign">아직 회원이 아니신가요? <input id="sign-up"  class="btn up" type="button" value="회원가입"></div>
@@ -298,23 +303,30 @@
         ⓒ Cho comics Corp. tel 010-4163-0989
     </div>
 <script>
-        const sign_up = document.getElementById('sign-up');
-    sign_up.addEventListener('click', function(){
+    const sign_up = document.getElementById('sign-up');
+        sign_up.addEventListener('click', function(){
         window.open('./sign-up.html', '회원가입', 'width=500px, height=450px');
     })
-        const search = document.getElementById('search-btn');
+    const search = document.getElementById('search-btn');
+
+        search.addEventListener('mousedown',function(){
+            let search_v = document.getElementById('search_v').value;
+            localStorage.setItem("search", search_v);
+        })
+
+
         search.addEventListener('click', function(){
         location.href = ('./search.html')
     })
-        const logo = document.getElementById('headLogo');
+    const logo = document.getElementById('headLogo');
         logo.addEventListener('click', function(){
         location.href = ('./main.html')
     })
-        const name_quiz = document.getElementById('name-quiz');
+    const name_quiz = document.getElementById('name-quiz');
         name_quiz.addEventListener('click', function(){
         location.href = ('./name-quiz.html')
     })
-        const with_naruto = document.getElementById('with-naruto');
+    const with_naruto = document.getElementById('with-naruto');
         with_naruto.addEventListener('click', function(){
         location.href = ('./with-naruto.html')
     })
@@ -323,8 +335,38 @@
 
 
 <!-- https://velog.io/@rkio/Javascript-%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B0%84-%EC%A0%95%EB%B3%B4-%EC%A0%84%EB%8B%AC-%EB%B0%A9%EB%B2%95-localStorage-sessionStorage
-    페이지 간 정보 전달하는 방법->내일 검색에다가 써보자
+    페이지 간 정보 전달하는 방법->내일 검색에다가 써보자 -> 왜 안될까?
+    8/29 해결 -> 바보같이 input[text]에 id를 안 넣고 진행했다.
+    로컬 데이터에 키와 값을 쌓는 형식으로 진행된다.
+    setItem(key, value)로 로컬에 저장하고  getItem(key)로 로컬에서 가져온다.
+
+    localStorage, sessionStorage의 차이로 어떤 것을 이용해 회원가입창을 유지할 지 고민해봐야겠다.
+
+    회원가입을 할 시에 클래스 생성함수? 사용 3-3-1-1
+    새로 회원가입을 할 때마다 1씩 증가
+    key가 존재하면 +1시키는 함수가 필요할 듯
+
+    로그인 확인할 때는 반복문 사용해서 key의 값을 비교하고 넘겨서 일치하는지 안일치하는지 따지고 있을 때와 없을 때 차이를 두자
+
+    1. member1, member2, member3, ..... member100까지 값을 불러오는 반복문 형성
+    2. 불러온 member의 값에 로그인의 ID와 PW가 존재하는지 비교해서 확인
+    3. 2를 member100까지 반복
+    4. 2, 3 번 진행 중 참이 존재한다면 로그인이 된 화면 -> visiblity로 조정,끝까지 갔는데 존재하지않는다면 alret로 실패
+
+
+
 -->
+
+<!-- 
+    search.addEventListener('mousedown',search_send())
+    function search_send(){
+        const search_v = document.getElementById('search_v');
+        localStorage.setItem("입력 값", search_v.value);
+
+    }
+         -->
+
+
 
 
 </body>

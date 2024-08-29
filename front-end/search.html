@@ -159,24 +159,27 @@
         }
         .contentbox1{
             position: relative;
-            top: 10px;
-            left: 25px;
+            left: 20px;
             width: 232px;
-            height: 159px;
+            height: 120px;
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
+            background-image: url(./picture/ani.png);
+            background-size: cover;
             cursor: pointer;
         }
         .contentbox2{
+            margin-top: 60px;
             position: relative;
-            top: 30px;
-            left: 25px;
+            left: 20px;
             width: 232px;
-            height: 159px;
+            height: 120px;
             text-align: center;
             border: 0.2px solid rgba(0,0,0,0.2);
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
+            background-image: url(./picture/naruto.png);
+            background-size: cover;
             cursor: pointer;
         }
         .contentboxidx{
@@ -192,7 +195,7 @@
         .con-arrow{
             position: relative;
             left: 260px;
-            top: 60px;
+            top: 70px;
             height: 20px;
         }
         #bodybar{
@@ -228,6 +231,7 @@
             position: absolute;
             top: 355px;
             left: 260px;
+            text-align: center;
         }
         #cmbar{
             position: absolute;
@@ -312,7 +316,7 @@
             <div class="barline"></div>
         </div>
         <div id="bodylogo"><img  class="logo"  src="./picture/logo2.png">  </div>
-        <div id="bodytext">관련된 검색어를 찾지 못했습니다.</div>
+        <div id="bodytext">"<span id="search_data"></span>"(와)과<br> 관련된 검색어를 찾지 못했습니다.</div>
         <div id="cmbar">
             <input class="barclick" type="button" value="Community">
             <div class="barline"></div>
@@ -348,23 +352,23 @@
     </div>
 
     <script>
-        const sign_up = document.getElementById('sign-up');
-    sign_up.addEventListener('click', function(){
+    const sign_up = document.getElementById('sign-up');
+        sign_up.addEventListener('click', function(){
         window.open('./sign-up.html', '회원가입', 'width=500px, height=450px');
     })
-        const search = document.getElementById('search-btn');
+    const search = document.getElementById('search-btn');
         search.addEventListener('click', function(){
         location.href = ('./search.html')
     })
-        const logo = document.getElementById('logo');
+    const logo = document.getElementById('logo');
         logo.addEventListener('click', function(){
         location.href = ('./main.html')
     })
-        const name_quiz = document.getElementById('name-quiz');
+    const name_quiz = document.getElementById('name-quiz');
         name_quiz.addEventListener('click', function(){
         location.href = ('./name-quiz.html')
     })
-        const with_naruto = document.getElementById('with-naruto');
+    const with_naruto = document.getElementById('with-naruto');
         with_naruto.addEventListener('click', function(){
         location.href = ('./with-naruto.html')
     })
@@ -379,7 +383,8 @@
     })
 
 
-
+    const search_data = localStorage.getItem('search');
+    document.getElementById('search_data').innerText = search_data;
     
 
 
