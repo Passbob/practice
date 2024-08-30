@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+  width: 150px;
+  height: 150px;
+  background: #febf00;
+  /* cursor: pointer; */
+}
+
+.box.vibration {
+  animation: vibration .1s infinite;
+}
+
+@keyframes vibration {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(-1deg);
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+        <div class="box vibration"></div>
+        <!-- use JS -->
+</body>
+</html>

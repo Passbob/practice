@@ -1,0 +1,98 @@
+.header {
+
+    height: 100px;
+
+}
+
+.nav {
+    border: 3px;
+    background: rgb(128, 125, 4);
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.section {
+    background: rgba(96, 118, 214, 0.2);
+    width: 80%;
+}
+
+.aside {
+    width: 20%;
+}
+
+
+
+.c1 {
+    background: rgba(247, 0, 0, 0.25);
+    color: white;
+    margin-top: 40px;
+    height: 170px;
+    
+}
+
+.c2 {
+    background: rgba(228, 231, 50, 0.25);;
+    color: white;
+    height: 170px;
+}
+
+.c3 {
+    background: rgba(98, 196, 235, 0.4);
+    color: white;
+    height: 170px;
+}
+
+
+
+.a1 {
+ 
+    
+    height: 600px;
+}
+
+
+
+.middle{
+    display: flex;
+}
+
+.b1 {
+
+    margin-left: 60px;
+    margin-right: 60px;
+    
+   }
+
+body {
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#but {
+    width: 200px;
+    height: 30px;
+    background: brown;
+    font-size: 15pt;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.img{
+    background: none;
+    display: inline-block;
+    margin-left: -40%;
+}
+
+.index {
+    background: none;
+    display: inline-block;
+}
+
+#list{
+    list-style-image: url(picture/strawberry.png);
+    width: max-content;
+    margin-left: 10%;
+}
