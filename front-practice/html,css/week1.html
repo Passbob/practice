@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nonDrag">| 1. 안녕하세요 |</div>
+    <br>
+    <div id="nonCopy">| 2. 이하은 입니다. |</div>
+
+    <script>
+        const nonDrag = document.getElementById('nonDrag');
+        const nonCopy = document.getElementById('nonCopy');
+
+        nonDrag.addEventListener('mouseover', function(e){
+            e.preventDefault();
+        });
+        nonDrag.addEventListener('mousedown', function(e){
+            e.preventDefault();
+        });
+        
+        nonCopy.addEventListener('copy', function(){
+            alert('복사가 불가능합니다.');
+            return false;
+        });
+    </script>
+
+    <h3>가수 이름을 아래 검색창에서 검색해보실 수 있습니다.</h3>
+    <br>
+    <input type="text" placeholder="검색 키워드를 입력하세요" id="music">
+    <input type="button" value="검색" id="searchMusic">
+    <br>
+    <h3>가수의 노래를 듣고싶으면 버튼을 눌러주세요.</h3>
+    <input type="radio" id="melon"><label for="melon">멜론</label>
+
+    <script>
+        const searchMusic = document.getElementById('searchMusic');
+        let music = document.getElementById('music');
+        const melon = document.getElementById('melon');
+        let musicName = '';
+
+        searchMusic.addEventListener('click', function(){
+            musicName = music.value;
+            music.innerHTML = '';
+            melon.addEventListener('click', function(){
+                window.open(`https://www.melon.com/search/total/index.htm?q=${musicName}`);
+            })
+        })
+    </script>
+
+    <h3>버튼이 두개 있는 페이지, 각 버튼 클릭시 마다 버튼의 클릭횟수 증가</h3>
+    <input type="button" value="버튼1" id="bt1"><label id="bt1click">0</label>
+    <br>
+    <br>
+    <input type="button" value="버튼2" id="bt2"><label id="bt2click">0</label>
+    <br>
+    <script>
+        const bt1 = document.getElementById('bt1');
+        const bt2 = document.getElementById('bt2');
+        let bt1click = document.getElementById('bt1click');
+        let bt2click = document.getElementById('bt2click');
+
+        bt1.onclick = (e)=> bt1click.innerHTML++; 
+        bt2.onclick = (e)=> bt2click.innerHTML++; 
+    </script>
+</body>
+</html>
