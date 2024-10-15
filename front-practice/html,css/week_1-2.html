@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" id="startRandom" value="클릭!">
+    <br>
+    <input type="text" placeholder="홀수 or 짝수" id="randomReply">
+    <input type="button" id="randomAns" value="확인">
+
+    <script>
+        let randomNum = 0;
+        const startRandom = document.getElementById('startRandom');
+        const randomReply = document.getElementById('randomReply');
+        const randomAns = document.getElementById('randomAns');
+
+        startRandom.onclick = (e)=> randomNum = Math.floor(Math.random()*100+1);
+
+        randomAns.addEventListener('click', function(){
+            if(randomReply.value == "홀수" && randomNum%2 != 0){
+                alert(`${randomNum}은 홀수가 맞습니다!`);
+            }else if(randomReply.value == "짝수" && randomNum%2 != 0){
+                alert(`${randomNum}은 홀수입니다!`);
+            }else if(randomReply.value == "짝수" && randomNum%2 == 0){
+                alert(`${randomNum}은 짝수가 맞습니다!`);
+            }else{
+                alert(`${randomNum}은 짝수입니다!`);
+            }
+        });
+    </script>
+    
+    <hr>
+
+    <input type="text" placeholder="검색할 내용을 입력해주세요" id="googleSearchValue">
+    <input type="button" id="googleSearch" value="검색">
+
+    <script>
+        const googleSearch = document.getElementById('googleSearch');
+        const googleSearchValue = document.getElementById('googleSearchValue');
+
+        googleSearch.addEventListener('click', function(){
+            location = (`https://www.google.com/search?q=${googleSearchValue.value}`);
+        });
+    </script>
+</body>
+</html>
